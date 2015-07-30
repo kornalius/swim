@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				".gitignore",
+				"LICENSE",
+				"README.md",
+				"swim.sublime-project",
+				"swim.sublime-workspace"
+			],
+			"path": "."
+		}
+	]
+}

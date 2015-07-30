@@ -1,0 +1,1535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"filter",
+				"filterManager	(WebGLRenderer.js)"
+			],
+			[
+				"_spa",
+				"_spacer_width"
+			],
+			[
+				"0x",
+				"0xFFFFFF	(app.coffee)"
+			],
+			[
+				"cache",
+				"cacheAsBitmap"
+			],
+			[
+				"_backSp",
+				"_backSpriteTexture"
+			],
+			[
+				"prototype",
+				"_.prototype.toString"
+			],
+			[
+				"lo",
+				"log	log"
+			],
+			[
+				"oepne",
+				"openedChanged"
+			],
+			[
+				"selectedD",
+				"selectedDateChanged"
+			],
+			[
+				"selectedDate",
+				"selectedDateChanged	(app-card.html)"
+			],
+			[
+				"bower",
+				"bower_components"
+			],
+			[
+				"shou",
+				"should.js"
+			],
+			[
+				"descr",
+				"describe(description, specDefinitions)	jasmine.js"
+			],
+			[
+				"getComputedSt",
+				"getComputedStyle(e, t)	index.js"
+			],
+			[
+				"isOp",
+				"isOpened()	index.js"
+			],
+			[
+				"emplo",
+				"employee"
+			],
+			[
+				"addEve",
+				"addEventListener"
+			],
+			[
+				"addEv",
+				"addEventListener"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"core-l",
+				"core-list.html"
+			],
+			[
+				"paper-",
+				"paper-autogrow-textarea.html"
+			],
+			[
+				"paper-input",
+				"paper-input/"
+			],
+			[
+				"quali",
+				"qualificationsTraining"
+			],
+			[
+				"act",
+				"activityFeedback"
+			],
+			[
+				"emer",
+				"emergencyContact"
+			],
+			[
+				"employee-full-card-",
+				"employee-full-card-schedule.html"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"spac",
+				"white-space"
+			],
+			[
+				"empl",
+				"employee_panel"
+			],
+			[
+				"emp",
+				"employee_panel"
+			],
+			[
+				"scro",
+				"scrollLeft"
+			],
+			[
+				"off",
+				"offsetLeft"
+			],
+			[
+				"1C",
+				"1CDC"
+			],
+			[
+				"scr",
+				"scroll_area"
+			],
+			[
+				"clie",
+				"clientWidth"
+			],
+			[
+				"timel",
+				"timeline-card"
+			],
+			[
+				"time",
+				"timeline"
+			],
+			[
+				"con",
+				"console.	console.log()"
+			],
+			[
+				"brow",
+				"browser"
+			],
+			[
+				"sc",
+				"script	HTML/Element"
+			],
+			[
+				"im",
+				"img	Image - Placeholder"
+			],
+			[
+				"browser",
+				"browserify"
+			],
+			[
+				"ht",
+				"html"
+			],
+			[
+				"ele",
+				"element"
+			],
+			[
+				"tit",
+				"title"
+			],
+			[
+				"typ",
+				"typeof"
+			],
+			[
+				"inde",
+				"indexOf	jsArray"
+			],
+			[
+				"side_bar_re",
+				"side_bar_rename"
+			],
+			[
+				"Array",
+				"_.isArray	_object"
+			],
+			[
+				"isAr",
+				"_.isArray"
+			],
+			[
+				"cocos2",
+				"cocos2d-js/	Dir"
+			],
+			[
+				"ava",
+				"avatar"
+			],
+			[
+				"av",
+				"avatar"
+			],
+			[
+				"updat",
+				"update"
+			],
+			[
+				"log",
+				"console.log"
+			],
+			[
+				"br",
+				"browserify"
+			],
+			[
+				"a",
+				"assets/imgs/avatar	png"
+			],
+			[
+				"ex",
+				"exit"
+			],
+			[
+				"te",
+				"FlxText"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "user/plugins/swim-terminal/terminal.coffee",
+			"settings":
+			{
+				"buffer_size": 18024,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "user/plugins/swim-textbuffer/textbuffer.coffee",
+			"settings":
+			{
+				"buffer_size": 5149,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"line",
+				"Edit: Swap Line Up"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"align",
+				"AlignTab"
+			],
+			[
+				"back",
+				"AutoBackups: Open file backup"
+			],
+			[
+				"backup",
+				"AutoBackups: Open file backup"
+			],
+			[
+				"edit",
+				"Project: Edit Project"
+			],
+			[
+				"surr",
+				"Surround: surround selection"
+			],
+			[
+				"quo",
+				"ChangeQuotes"
+			],
+			[
+				"org",
+				"Preferences: orgmode Settings – Default"
+			],
+			[
+				"enab",
+				"Package Control: Enable Package"
+			],
+			[
+				"q",
+				"ChangeQuotes"
+			],
+			[
+				"swap",
+				"Swap Selections"
+			],
+			[
+				"qu",
+				"ChangeQuotes"
+			],
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"syntax test",
+				"Set Syntax: JavaScript (Test)"
+			],
+			[
+				"previe",
+				"Markdown HTML Preview"
+			],
+			[
+				"preview",
+				"Markdown HTML Preview"
+			],
+			[
+				"git",
+				"Git: Diff Current File"
+			],
+			[
+				"join",
+				"Edit: Join Lines"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"backu",
+				"AutoBackups: Open file backup"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"goto",
+				"Goto: Line…"
+			],
+			[
+				":e",
+				":e - Open file"
+			],
+			[
+				"open",
+				":e - Open file"
+			],
+			[
+				"low",
+				"Convert Case: Lower Case"
+			],
+			[
+				"tit",
+				"Convert Case: Title Case"
+			],
+			[
+				"titl",
+				"Convert Case: Title Case"
+			],
+			[
+				"title",
+				"Convert Case: Title Case"
+			],
+			[
+				"expand",
+				"Expand Selection to Whitespace"
+			],
+			[
+				"pick",
+				"Color Picker"
+			],
+			[
+				"pi",
+				"Color Picker"
+			],
+			[
+				"swapq",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"quote",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"status",
+				"Git: Status"
+			],
+			[
+				"pic",
+				"Color Picker"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"g",
+				"Gulp"
+			],
+			[
+				"gulp",
+				"Gulp"
+			],
+			[
+				"gu",
+				"Gulp"
+			],
+			[
+				"move",
+				"Quick File Move: Move Current File"
+			],
+			[
+				"rena",
+				"ANF: Rename File"
+			],
+			[
+				"histo",
+				"Local History: Browse"
+			],
+			[
+				"gut",
+				"View: Toggle Gutter"
+			],
+			[
+				"gutt",
+				"GitGutter: Compare Against HEAD"
+			],
+			[
+				"gitadd",
+				"Git: Quick Add"
+			],
+			[
+				"commi",
+				"Git (SideBarGit): Commit All…"
+			],
+			[
+				"gitg",
+				"GitGutter: Compare Against HEAD"
+			],
+			[
+				"undo",
+				"FullUndo: Full undo"
+			],
+			[
+				"side",
+				"Side Bar: Refresh"
+			],
+			[
+				"reveal",
+				"File: Reveal"
+			],
+			[
+				"edit proje",
+				"Project: Edit Project"
+			],
+			[
+				"file",
+				"File Navigator: Open"
+			],
+			[
+				"rename",
+				"Tag: Rename"
+			],
+			[
+				"update",
+				"Keymap Redefiner: Update Keymaps"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"ali",
+				"AlignTab"
+			],
+			[
+				"emmet",
+				"Emmet: Balance (inward)"
+			],
+			[
+				"lorem",
+				"Snippet: lorem - One sentence"
+			],
+			[
+				"lo",
+				"Snippet: lorem - Short paragraph"
+			],
+			[
+				"insp",
+				"Web Inspector"
+			],
+			[
+				"web",
+				"Web Inspector"
+			],
+			[
+				"keys",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"command",
+				"Preferences: Commands - Default"
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"intel",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"shell",
+				"SublimeREPL: Shell"
+			],
+			[
+				"make",
+				"Make file executable"
+			],
+			[
+				"exec",
+				"Make file executable"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"delete",
+				"ANF: Delete File"
+			],
+			[
+				"shel",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"repl",
+				"SublimeREPL: Shell"
+			],
+			[
+				"termin",
+				"Open in terminal"
+			],
+			[
+				"nav",
+				"File Navigator: Open"
+			],
+			[
+				"brows",
+				"Browse Mode..."
+			],
+			[
+				"run",
+				"Run"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"theme",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"csub",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"cosub",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"colors",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"upda",
+				"Keymap Redefiner: Update Keymaps"
+			],
+			[
+				"node",
+				"SublimeREPL: Node"
+			],
+			[
+				"col",
+				"Color Picker"
+			],
+			[
+				"short",
+				"TabsShortcuts: Key Bindings – Default"
+			],
+			[
+				"navi",
+				"File Navigator: Open"
+			],
+			[
+				"push",
+				"Git: Push Current Branch"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Quick Add"
+			],
+			[
+				"gul",
+				"Gulp"
+			],
+			[
+				"cake",
+				"Coffee: Run Cake Task"
+			],
+			[
+				"sublimegit",
+				"SublimeGit: Add License"
+			],
+			[
+				"remote",
+				"Git (SideBarGit): Remote add…"
+			],
+			[
+				"coff",
+				"Coffee: Run Script / Selection"
+			],
+			[
+				"coffee",
+				"Coffee: Run Script / Selection"
+			],
+			[
+				"npmi",
+				"npm: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippets: Open snippet"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"comm",
+				"DocBlockr: Reparse comment block"
+			],
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"doc",
+				"DocBlockr: Decorate line comment"
+			],
+			[
+				"projec",
+				"Project: Edit"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"n",
+				"npm: Search Packages"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"gitp",
+				"Git: Push"
+			],
+			[
+				"igno",
+				"Git: Update Project Ignored Files"
+			],
+			[
+				"gitpu",
+				"Git: Push"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"proj",
+				"Project Manager"
+			],
+			[
+				"haxe",
+				"Haxe: Choose Build Target"
+			],
+			[
+				"hb",
+				"Haxe: Run build"
+			],
+			[
+				"syntaxxm",
+				"Set Syntax: XML"
+			],
+			[
+				"build",
+				"Set Syntax: NME Build File"
+			],
+			[
+				"dash",
+				"DashDoc: invoke Dash with selected word"
+			],
+			[
+				"hax",
+				"Haxe: New Class"
+			],
+			[
+				"bui",
+				"Haxe: Run build"
+			],
+			[
+				"to",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"tog",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"togg",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"togglint",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"jscript",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 754.0
+	},
+	"console":
+	{
+		"height": 270.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"coffee",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read()) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/hd2/sources/swim",
+		"/Volumes/hd2/sources/swim/app",
+		"/Volumes/hd2/sources/swim/node_modules",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/display",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/interaction",
+		"/Volumes/hd2/sources/swim/user",
+		"/Volumes/hd2/sources/swim/user/plugins",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-textbuffer"
+	],
+	"file_history":
+	[
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/math/Point.js",
+		"/Volumes/hd2/sources/swim/user/settings.cson",
+		"/Volumes/hd2/sources/swim/user/package.json",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/math/shapes/Rectangle.js",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-textbuffer/textbuffer.coffee",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-textbuffer/package.json",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-textbuffer/index.coffee",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/index.coffee",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/cursor.coffee",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/interaction/InteractionManager.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/interaction/InteractionData.js",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/shaders/rgb/rgb.frag",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/display/Container.js",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/palettes.coffee",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/fonts.coffee",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/shaders/rgb/rgb.coffee",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/shaders/scanlines/scanlines.frag",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/shaders/scanlines/scanlines.coffee",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/blur/blur.frag",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/blur/blurY.vert",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/shaders/TextureShader.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/ascii/AsciiFilter.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/ascii/ascii.frag",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/filters/AbstractFilter.js",
+		"/Volumes/hd2/sources/swim/app/app.coffee",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/managers/FilterManager.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/bin/pixi.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/WebGLRenderer.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/managers/ShaderManager.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/textures/RenderTexture.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/textures/BaseTexture.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/textures/Texture.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/shaders/Shader.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/filters/FXAAFilter.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/index.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/dot/DotScreenFilter.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/index.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/pixelate/PixelateFilter.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/filters/rgb/RGBSplitFilter.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/graphics/Graphics.js",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/terminal.coffee",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/text/Text.js",
+		"/Volumes/hd2/sources/swim/index.css",
+		"/Volumes/hd2/sources/swim/main.coffee",
+		"/Volumes/hd2/sources/swim/index.js",
+		"/Volumes/hd2/sources/swim/index.html",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/const.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/ticker/Ticker.js",
+		"/Volumes/hd/Dropbox/Sublime/User/Preferences.sublime-settings",
+		"/Volumes/hd/Dropbox/Sublime/User/Afterglow-twilight (SL).tmTheme",
+		"/Volumes/hd/Dropbox/Sublime/User/Default (OSX).sublime-keymap",
+		"/Volumes/hd/Downloads/terminal-sexy-1.txt",
+		"/Volumes/hd/Downloads/terminal-sexy.txt",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/extras/cacheAsBitmap.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/sprites/webgl/SpriteRenderer.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/sprites/Sprite.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/graphics/webgl/WebGLGraphicsData.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/graphics/webgl/GraphicsRenderer.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/graphics/GraphicsData.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/display/DisplayObject.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/SystemRenderer.js",
+		"/Users/alain/sublime_backups/2015-07-13/Volumes/hd2/sources/swim/user/settings_145038.cson",
+		"/Volumes/hd2/sources/swim/app/settings.coffee",
+		"/Volumes/hd2/sources/swim/app/plugins.coffee",
+		"/Volumes/hd2/sources/swim/app/settings.cson",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/ticker/index.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/polyfill/index.js",
+		"/Volumes/hd2/sources/swim/node_modules/property-accessors/package.json",
+		"/Volumes/hd2/sources/swim/node_modules/property-accessors/lib/property-accessors.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/extras/BitmapText.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/loaders/bitmapFontParser.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/textures/TextureUvs.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/renderers/webgl/utils/ObjectRenderer.js",
+		"/Volumes/hd2/sources/swim/user/plugins/swim-terminal/package.json",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/math/shapes/RoundedRectangle.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/math/Matrix.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/loaders/textureParser.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/src/core/particles/ParticleContainer.js",
+		"/Volumes/hd2/sources/swim/swim.sublime-project",
+		"/Users/alain/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Volumes/hd2/sources/swim/node_modules/electron-prebuilt/dist/Electron.app/Contents/Resources/atom.asar",
+		"/Volumes/hd2/sources/swim/node_modules/.bin/electron",
+		"/Volumes/hd2/sources/swim/app/index.js",
+		"/Volumes/hd2/sources/swim/node_modules/pixi.js/package.json",
+		"/Volumes/hd2/sources/swim/screenshot.png",
+		"/Volumes/hd2/sources/swim/package.json",
+		"/Volumes/hd2/sources/swim/main.js",
+		"/Volumes/hd2/sources/swim/node_modules/electron-prebuilt/cli.js",
+		"/Volumes/hd2/sources/swim/node_modules/electron-prebuilt/path.txt",
+		"/Volumes/hd2/sources/swim/node_modules/electron-prebuilt/index.js",
+		"/Volumes/hd2/sources/swim/node_modules/electron-prebuilt/install.js",
+		"/Users/alain/Dash-Docset-Creator/docset.config.php",
+		"/Users/alain/Dash-Docset-Creator/output/pixi.docset/Contents/Info.plist",
+		"/Users/alain/Dash-Docset-Creator/create-docset.php",
+		"/Users/alain/Dash-Docset-Creator/files_go_here/core_index.js.html",
+		"/Users/alain/Dash-Docset-Creator/files_go_here/core_const.js.html",
+		"/Users/alain/Dash-Docset-Creator/pixi/docset.config.php",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/daily/daily-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/daily/employee-daily-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/elements/date-picker.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/windows/early-window.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/weekly/weekly-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/windows/dayoff-window.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/bower_components/polymer-date-picker/polymer-date-picker-calendar.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/bower_components/polymer-date-picker/polymer-date-picker.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/elements/time-picker.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/bower_components/polymer-date-picker/polymer-date-picker-positioning.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/public/index.js",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/bower_components/polymer-date-picker/polymer-date-picker.css",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/app/employee/employee-full-card-content.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/elements/input-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/date-card.html",
+		"/Volumes/hd/Dropbox/Sublime/User/Flatgrammer (OSX).sublime-theme",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/app/app-left-panel.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/elements/base-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/node_modules/browser-sync/node_modules/browser-sync-ui/node_modules/weinre/web/client/ConsoleView.js",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/elements/base-search-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/app/employee/employee-search-card.html",
+		"/Volumes/hd/Dropbox/emacs.d/lisp/init-dired.el",
+		"/Volumes/hd/Dropbox/emacs.d/init.el",
+		"/Volumes/hd/Dropbox/emacs.d/custom.el",
+		"/Volumes/hd/Dropbox/emacs.d/alain.org",
+		"/Users/alain/Library/Application Support/Sublime Text 3/Packages/orgmode/orgmode.sublime-settings",
+		"/Volumes/hd/Dropbox/Sublime/Preferences (OSX).sublime-settings",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/app/app-card.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/releasenotes.html",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked.todo",
+		"/Volumes/hd2/sources/lsi/garda/GSKED/gsked/windows/move-window.html"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 112.0,
+		"where_history":
+		[
+			"/Volumes/hd2/sources/swim,-node_modules/,-bower_components/,-jspm_packages/,-public/,-lib/",
+			"/Volumes/hd2/sources/lsi/garda/GSKED/,-node_modules/,-bower_components/,-jspm_packages/,-public/,-lib/",
+			"/Volumes/hd2/sources/lsi/garda/GSKED/,-node_modules/,-bower_components/,-jspm_packages/,-public/",
+			"/Volumes/hd2/sources/lsi/garda/GSKED/,-node_modules/,-bower_components/,-jspm_packages/",
+			"/Volumes/hd2/sources/lsi/garda/GSKED/,-node_modules/,-bower_components/,-jspm_packages",
+			"/Volumes/MacintoshHD/Users/alain/sources/Subsistence/app",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"x",
+			"y",
+			"palette",
+			"_palette",
+			"lines",
+			"end",
+			"start",
+			"y",
+			"x",
+			"col",
+			"_start",
+			"col",
+			"_start",
+			"col",
+			"width",
+			"y",
+			"x",
+			"y",
+			"x",
+			"start",
+			"TextRange",
+			"start",
+			"parent",
+			"x",
+			"TextBufferLine",
+			"lines",
+			"parent",
+			"fg",
+			"pos",
+			"terminal",
+			"width",
+			"offset",
+			"blink",
+			"style",
+			"blink",
+			"_blink",
+			"_tick",
+			"shared",
+			"tick",
+			"stopped",
+			"@",
+			"stopped",
+			"y",
+			"x",
+			"_bound",
+			"_parent.",
+			"_height",
+			"_width",
+			"@height",
+			"_height",
+			"_width",
+			"@width = ",
+			"width",
+			"x",
+			"_container",
+			"position",
+			"_container",
+			"x",
+			"y",
+			"_container",
+			"dimensions",
+			"RGBFilter",
+			"dimensions",
+			"pixelSize",
+			"fragCoord",
+			"size",
+			"tex",
+			"res",
+			"iResolution",
+			"iGlobalTime",
+			"iChannelTimeResolution",
+			"iChannelTime",
+			"iTex",
+			"tex",
+			"iChannel0",
+			"core",
+			"shader",
+			"filter",
+			"AsciiFilter",
+			"opentype",
+			"_updateBackLayer",
+			"_backLayer",
+			"updateu",
+			"pixelToPos",
+			"_charWidth",
+			"* @_width",
+			"_backLayer",
+			"_textLayer",
+			"_backTextLayer",
+			"begin",
+			"_backLayer",
+			".text",
+			"spacer",
+			"spc",
+			"path",
+			"anti",
+			"measure",
+			"padding",
+			"_update",
+			"[null]",
+			"_clear",
+			"_frames",
+			"@",
+			"fnt",
+			"that",
+			"font",
+			".font()",
+			"font",
+			"name",
+			"@down",
+			"down",
+			"that",
+			"_cursors",
+			"@_cursors",
+			"TermCursor",
+			"bol",
+			"cursor",
+			"TermCur",
+			"fonts",
+			"\"",
+			"\",",
+			"\"#",
+			"{",
+			"@_pos = ",
+			"_lines",
+			"_color",
+			"ashes",
+			"background"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"0x",
+			"\\n",
+			",",
+			"{\n",
+			"window.app.log",
+			"\"",
+			"\":",
+			"\", \"",
+			"",
+			"@",
+			"game.",
+			", \"$1\": ",
+			"\\\"$1\\\"",
+			"\"",
+			"www."
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "user/plugins/swim-terminal/terminal.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10709,
+								10709
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"tabs_extra_last_activated": 1437741336.14,
+							"tabs_extra_last_activated_sheet_index": 0,
+							"tabs_extra_spawned": true,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8436.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "user/plugins/swim-textbuffer/textbuffer.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								969,
+								969
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"tabs_extra_last_activated": 1437648988.61,
+							"tabs_extra_last_activated_sheet_index": 1,
+							"tabs_extra_spawned": true,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 706.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 274.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 118.0
+	},
+	"output.git-commit":
+	{
+		"height": 118.0
+	},
+	"output.git-push":
+	{
+		"height": 118.0
+	},
+	"output.gulp_output":
+	{
+		"height": 198.0
+	},
+	"output.settings_documentation_panel":
+	{
+		"height": 142.0
+	},
+	"output.textarea":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "swim.sublime-project",
+	"replace":
+	{
+		"height": 74.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"polydate",
+				"bower_components/polymer-date-picker/polymer-date-picker-positioning.html"
+			],
+			[
+				"polydatecale",
+				"bower_components/polymer-date-picker/polymer-date-picker-calendar.html"
+			],
+			[
+				"appc",
+				"app/app-card.html"
+			],
+			[
+				"app",
+				"app/app-left-panel.html"
+			],
+			[
+				"date",
+				"gsked/date-card.html"
+			],
+			[
+				"autogrow",
+				"bower_components/paper-input/paper-autogrow-textarea.html"
+			],
+			[
+				"autog",
+				"bower_components/paper-input/test/paper-autogrow-textarea.html"
+			],
+			[
+				"autogro",
+				"bower_components/paper-input/paper-autogrow-textarea.html"
+			],
+			[
+				"gulp",
+				"Gulpfile.js"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"page",
+				"bower_components/core-pages/core-pages.html"
+			],
+			[
+				"core-anim",
+				"bower_components/core-animated-pages/core-animated-pages.html"
+			],
+			[
+				"selecto",
+				"bower_components/core-selector/core-selector.html"
+			],
+			[
+				"tabs",
+				"bower_components/paper-tabs/paper-tabs.html"
+			],
+			[
+				"panel",
+				"elements/slide-panel.html"
+			],
+			[
+				"panels",
+				"elements/slide-panels.html"
+			],
+			[
+				"pages",
+				"bower_components/core-animated-pages/core-animated-pages.html"
+			],
+			[
+				"papto",
+				"bower_components/paper-toast/paper-toast.html"
+			],
+			[
+				"overl",
+				"bower_components/core-overlay/core-overlay.html"
+			],
+			[
+				"transi",
+				"bower_components/core-transition/core-transition-css.html"
+			],
+			[
+				"toas",
+				"elements/toast-card.html"
+			],
+			[
+				"papt",
+				"bower_components/paper-toast/paper-toast.html"
+			],
+			[
+				"menu",
+				"bower_components/core-menu/core-menu.html"
+			],
+			[
+				"dropd",
+				"bower_components/core-dropdown/core-dropdown-base.html"
+			],
+			[
+				"papermenu",
+				"bower_components/paper-dropdown-menu/paper-dropdown-menu.html"
+			],
+			[
+				"emplsear",
+				"app/employee/employee-search-card.html"
+			],
+			[
+				"coreove",
+				"bower_components/core-overlay/core-overlay.html"
+			],
+			[
+				"dialog",
+				"bower_components/paper-dialog/paper-dialog-base.html"
+			],
+			[
+				"paperdia",
+				"bower_components/paper-dialog/paper-dialog.html"
+			],
+			[
+				"base-wind",
+				"elements/base-window.html"
+			],
+			[
+				"focus",
+				"bower_components/core-focusable/core-focusable.js"
+			],
+			[
+				"iconbut",
+				"bower_components/core-icon-button/core-icon-button.html"
+			],
+			[
+				"overla",
+				"bower_components/core-overlay/core-overlay.html"
+			],
+			[
+				"dropdown",
+				"bower_components/core-dropdown/core-dropdown.html"
+			],
+			[
+				"drop",
+				"bower_components/core-dropdown/core-dropdown.html"
+			],
+			[
+				"dropdo",
+				"bower_components/core-dropdown/core-dropdown.html"
+			],
+			[
+				"paperdrop",
+				"bower_components/paper-dropdown/paper-dropdown.html"
+			],
+			[
+				"coreselec",
+				"bower_components/core-selector/core-selector.html"
+			],
+			[
+				"coremenu",
+				"bower_components/core-menu/core-menu.html"
+			],
+			[
+				"input",
+				"elements/input-card.html"
+			],
+			[
+				"vulcan",
+				"node_modules/gulp-vulcanize/node_modules/vulcanize/bin/vulcanize"
+			],
+			[
+				"polymer",
+				"bower_components/polymer/polymer.html"
+			],
+			[
+				"dargs",
+				"node_modules/gulp-ruby-sass/node_modules/dargs/dargs.js"
+			],
+			[
+				"phaser.game",
+				"phaser/docs/Phaser.Game.html"
+			],
+			[
+				"gulp-copy",
+				"node_modules/gulp-copy/index.js"
+			],
+			[
+				"gulp-load",
+				"node_modules/gulp-load/index.js"
+			],
+			[
+				"chalk",
+				"node_modules/chalk/index.js"
+			],
+			[
+				"shell",
+				"node_modules/shelljs/shell.js"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"commander",
+				"node_modules/commander/Readme.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"/Volumes/MacintoshHD/Users/alain/sources/Subsistence/Subsistence.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 400.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"hello",
+				"HelloWorldLayer"
+			]
+		],
+		"width": 664.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 355.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
