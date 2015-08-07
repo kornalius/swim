@@ -89,7 +89,6 @@ Swim.TextCursor = class TextCursor extends EventEmitter
     @region.begin.moveTo 0, 0
     @region.end.moveTo lastRow, lastCol
 
-
   selectRow: (row) ->
     @toTextRegion()
     @region.selectRow row

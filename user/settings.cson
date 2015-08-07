@@ -1,4 +1,5 @@
 plugins:
   "swim-terminal": true
   "swim-textbuffer": true
-  "swim-textedit": true
+  "swim-editor": true
+  "swim-document": true

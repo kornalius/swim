@@ -2,6 +2,9 @@
 
 Swim.terminals = []
 
+Swim.clickDistance = 8
+Swim.dblclickTime = 350
+
 Swim.Terminal = class Terminal extends PIXI.Container
 
   PropertyAccessors.includeInto(@)
@@ -25,7 +28,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
         @_font = value
 
   @::accessor 'rect',
-    get: -> new PIXI.Rectangle(@_rect.x, @_rect.y, @_rect.width, @_rect.height)
+    get: -> @rectangle(@_rect.x, @_rect.y, @_rect.width, @_rect.height)
     set: (value) ->
       if @_rect.x != value.x or @_rect.y != value.y or @_rect.width != value.width or @_rect.height != value.height
         @_pos.x = Math.trunc(value.x / @_charWidth)
@@ -33,7 +36,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
         @_size.x = Math.trunc(value.width / @_charWidth)
         @_size.y = Math.trunc(value.height / @_charHeight)
         @position = @positionInPixels()
-        @_rect = new PIXI.Rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
+        @_rect = @rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
         @_update()
 
   @::accessor 'padding',
@@ -42,7 +45,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
       if @_padding != value
         @_padding = value
         @position = @positionInPixels()
-        @_rect = new PIXI.Rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
+        @_rect = @rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
         @_update()
 
   @::accessor 'pos',
@@ -68,7 +71,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
     set: (value) ->
       if @_charWidth != value
         @_charWidth = value
-        @_rect = new PIXI.Rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
+        @_rect = @rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
         @_update()
 
   @::accessor 'charHeight',
@@ -76,7 +79,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
     set: (value) ->
       if @_charHeight != value
         @_charHeight = value
-        @_rect = new PIXI.Rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
+        @_rect = @rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
         @_update()
 
   @::accessor 'rows',
@@ -123,6 +126,13 @@ Swim.Terminal = class Terminal extends PIXI.Container
         @_focused = value
         @_update()
 
+  @::accessor 'options',
+    get: -> @_options
+    set: (value) ->
+      if @_options != value
+        @_options = value
+        @_update()
+
   @::accessor 'z',
     get: -> @_z
     set: (value) ->
@@ -139,6 +149,20 @@ Swim.Terminal = class Terminal extends PIXI.Container
         @_tabIndex = value
         if @focused and value == -1
           @focusPrev()
+
+  @::accessor 'content',
+    get: ->
+      lines = []
+      for r in @_rows
+        line = ""
+        for c in r
+          line += c._ch if c?
+        lines.push line
+      return lines.join("\n")
+    set: (value) ->
+      if @content != value
+        @cls.write(value)
+        @_update()
 
   @::accessor 'foreground', -> @fg = @_palette.fg; @
   @::accessor 'background', -> @fg = @_palette.bg; @
@@ -215,8 +239,8 @@ Swim.Terminal = class Terminal extends PIXI.Container
     @_modes = []
 
     @_palette = config?.palette or Swim.palettes.default
-    @_pos = config?.pos or new PIXI.Point()
-    @_size = config?.size or new PIXI.Point(80, 24)
+    @_pos = config?.pos or @point()
+    @_size = config?.size or @point(80, 24)
     @_fg = config?.fg or @_palette.fg
     @_bg = config?.bg or @_palette.bg
     if config?.font
@@ -225,12 +249,18 @@ Swim.Terminal = class Terminal extends PIXI.Container
       @_font = Swim.getFont(name: 'Lucida Console', size: 12)
     @_charWidth = config?.charWidth or @_font.width
     @_charHeight = config?.charHeight or @_font.height
-    @_options = config?.options or {}
+
+    @_options =
+      dblclickTime: 500
+      clickDistance: 1
+
+    if config?.options?
+      _.extend(@_options, config.options)
 
     @_cursorConfig =
       width: @_charWidth
       height: @_charHeight
-      offset: new PIXI.Point()
+      offset: @point()
       wrap: true
       blink: 500
       type: 'block'
@@ -251,14 +281,14 @@ Swim.Terminal = class Terminal extends PIXI.Container
     if @_cursorConfig.type == 'block'
       @_cursorConfig.width = @_charWidth
       @_cursorConfig.height = @_charHeight
-      @_cursorConfig.offset = new PIXI.Point()
+      @_cursorConfig.offset = @point()
 
     else if @_cursorConfig.type == 'underline'
-      @_cursorConfig.offset = new PIXI.Point(0, @_cursorConfig.height - 4)
+      @_cursorConfig.offset = @point(0, @_cursorConfig.height - 4)
       @_cursorConfig.height = 4
 
     else if @_cursorConfig.type == 'caret'
-      @_cursorConfig.offset = new PIXI.Point(0, -1)
+      @_cursorConfig.offset = @point(0, -1)
       @_cursorConfig.height += 2
       @_cursorConfig.width = 2
 
@@ -269,22 +299,32 @@ Swim.Terminal = class Terminal extends PIXI.Container
     @interactive = true
 
     @position = @positionInPixels()
-    @_rect = new PIXI.Rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
+    @_rect = @rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
 
     # @filters = [f]
 
+    @_clickCount = 0
+    @_dblClickTimer = null
+
     @on 'mousedown', @onDown.bind @
+    @on 'rightdown', @onDown.bind @
     @on 'mousemove', @onMove.bind @
     @on 'mouseup', @onUp.bind @
+    @on 'rightup', @onUp.bind @
+    @on 'mouseout', @onOut.bind @
+    @on 'mouseover', @onOver.bind @
 
     @on 'touchstart', @onDown.bind @
     @on 'touchmove', @onMove.bind @
     @on 'touchup', @onUp.bind @
 
+    @on 'click', @onClick.bind @
+    @on 'dblclick', @onDblClick.bind @
+
     @on 'added', ((c) ->
       if @ instanceof Terminal
         @position = @positionInPixels()
-        @_rect = new PIXI.Rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
+        @_rect = @rectangle(@position.x, @position.y, @widthInPixels(), @heightInPixels())
     ).bind(@)
 
     @_backLayer = new PIXI.Graphics()
@@ -306,9 +346,9 @@ Swim.Terminal = class Terminal extends PIXI.Container
 
     @_cursors = [new Swim.TermCursor(@, @_cursorConfig)]
 
-    @_tmpPt = new PIXI.Point()
-    @_tmpPt2 = new PIXI.Point()
-    @_tmpRect = new PIXI.Rectangle()
+    @_tmpPt = @point()
+    @_tmpPt2 = @point()
+    @_tmpRect = @rectangle()
 
     Swim.terminals.push @
 
@@ -413,7 +453,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
 
   heightInPixels: -> @_charHeight * @_size.y + @_padding * 2
 
-  sizeInPixels: -> new PIXI.Point(@_rect.width, @_rect.height)
+  sizeInPixels: -> @point(@_rect.width, @_rect.height)
 
   _showCursors: ->
     for c in @_cursors
@@ -574,12 +614,12 @@ Swim.Terminal = class Terminal extends PIXI.Container
 
   posToIndex: (pos) -> pos.y * @_size.x + pos.x
 
-  indexToPos: (index) -> t = Math.trunc(index / @_size.x); new PIXI.Point(index - (t * @_size.x), t)
+  indexToPos: (index) -> t = Math.trunc(index / @_size.x); @point(index - (t * @_size.x), t)
 
-  pixelToPos: (p) -> new PIXI.Point(Math.trunc((p.x - @_padding) / @_charWidth), Math.trunc((p.y - @_padding) / @_charHeight))
+  pixelToPos: (p) -> @point(Math.trunc((p.x - @_padding) / @_charWidth), Math.trunc((p.y - @_padding) / @_charHeight))
 
   posToPixel: (pos, skipParentPadding = false) ->
-    p = new PIXI.Point(pos.x * @_charWidth, pos.y * @_charHeight)
+    p = @point(pos.x * @_charWidth, pos.y * @_charHeight)
     if !skipParentPadding and @parent? and @parent._padding
       p.x += @parent._padding - @_padding
       p.y += @parent._padding - @_padding
@@ -592,32 +632,93 @@ Swim.Terminal = class Terminal extends PIXI.Container
 
   charAtPixel: (p) -> @charAt(@pixelToPos(p))
 
+  point: (x, y) -> new PIXI.Point(x, y)
+
+  rectangle: (x, y, w, h) -> new PIXI.Rectangle(x, y, w, h)
+
   onDown: (e) ->
-    t = e.target
-    t.setFocus()
-    t._pressed = true
+    pt = e.data.getLocalPosition(@)
+
+    @setFocus()
+
+    @_clickCount++
+
+    if !@_pressed?
+      @_pressed = {}
+
+    @_pressed.time = Date.now()
+    @_pressed.rightButton = @_isRightDown
+
+    if !@_pressed.pixel?
+      @_pressed.pixel = {}
+    @_pressed.pixel.start = pt
+    @_pressed.pixel.pos = pt
+    @_pressed.pixel.distance = 0
+
+    if !@_pressed.char?
+      @_pressed.char = {}
+    @_pressed.char.start = @pixelToPos(pt)
+    @_pressed.char.pos = @pixelToPos(pt)
+    @_pressed.char.distance = 0
+
+    if @_clickCount == 1
+      that = @
+      @_dblClickTimer = setTimeout(->
+        that._clickCount = 0
+      , Swim.dblclickTime)
+    else
+      clearTimeout(@_dblClickTimer)
+      @_dblClickTimer = null
+      if @_pressed.pixel.pos.distance(@_lastPressed.pixel.pos) <= Swim.clickDistance
+        @emit('dblclick', e)
+      @_clickCount = 0
+
     e.stopPropagation()
 
   onMove: (e) ->
-    t = e.target
-    if t._pressed
+    if @_pressed?
+      pt = e.data.getLocalPosition(@)
+      cpt = @pixelToPos(pt)
+      @_pressed.pixel.pos = pt
+      @_pressed.char.pos = cpt
+      @_pressed.pixel.distance = pt.distance(@_pressed.pixel.start)
+      @_pressed.char.distance = cpt.distance(@_pressed.char.start)
       e.stopPropagation()
-    #   p = t.pixelToPos(e.data.getLocalPosition(t))
-    #   t.cursor.moveTo(p)
-    #   c = t.charAt(p)
-    #   if c?
-    #     c.bg = Math.random() * 0xFFFFFF
 
   onUp: (e) ->
-    t = e.target
-    if t._pressed
-      # p = t.pixelToPos(e.data.getLocalPosition(t))
-      # t.cursor.moveTo(p)
-      t._pressed = false
+    if @_pressed?
+      pt = e.data.getLocalPosition(@)
+      cpt = @pixelToPos(pt)
+      if @_clickCount == 1 and @_pressed.pixel.distance <= Swim.clickDistance
+        @emit('click', e)
+      else
+        @_lastPressed = _.deepClone(@_pressed)
+        @_pressed = null
       e.stopPropagation()
+
+    for t in Swim.terminals
+      if t._pressed?
+        t.onUp(e)
+
+  onOver: (e) ->
+    e.stopPropagation()
+
+  onOut: (e) ->
+    e.stopPropagation()
+
+  onClick: (e) ->
+    @_lastPressed = _.deepClone(@_pressed)
+    @_pressed = null
+    e.stopPropagation()
+
+  onDblClick: (e) ->
+    e.stopPropagation()
 
   blur: ->
     @_focused = false
+    @emit 'blur'
+    if @_document?
+      @_document.emit 'blur'
     return @
 
   setFocus: ->
@@ -625,22 +726,25 @@ Swim.Terminal = class Terminal extends PIXI.Container
       for tt in Swim.terminals
         tt.blur()
       @_focused = true
+      @emit 'focus'
+      if @_document?
+        @_document.emit 'focus'
     return @
 
   focusPrev: ->
     l = @_tabIndex
-    for t in @terminalChildren()
+    @each (t) ->
       if t._tabIndex <= l and t != @
         t.setFocus()
-        break
+        return true
     return @
 
   focusNext: ->
     l = @_tabIndex
-    for t in @terminalChildren()
+    @each (t) ->
       if t._tabIndex >= l and t != @
         t.setFocus()
-        break
+        return true
     return @
 
   setCursor: (pos) ->
@@ -763,7 +867,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
           p2.x = xx
           @copyto(p2, p)
       @eraseRow(@_size.y - 1)
-      for t in @terminalChildren()
+      @each (t) ->
         t._tmpPt.x = t.pos.x
         t._tmpPt.y = t.pos.y - 1
         t.pos = t._tmpPt
@@ -778,7 +882,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
           p2.x = xx
           @copyto(p2, p)
       @eraseRow(0)
-      for t in @terminalChildren()
+      @each (t) ->
         t._tmpPt.x = t.pos.x
         t._tmpPt.y = t.pos.y + 1
         t.pos = t._tmpPt
@@ -792,7 +896,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
         p2.y = yy
         @copyto(p2, p)
       @eraseCol(@_size.x - 1)
-      for t in @terminalChildren()
+      @each (t) ->
         t._tmpPt.x = t.pos.x - 1
         t._tmpPt.y = t.pos.y
         t.pos = t._tmpPt
@@ -806,7 +910,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
         p2.y = yy
         @copyto(p2, p)
       @eraseCol(0)
-      for t in @terminalChildren()
+      @each (t) ->
         t._tmpPt.x = t.pos.x + 1
         t._tmpPt.y = t.pos.y
         t.pos = t._tmpPt
@@ -831,10 +935,20 @@ Swim.Terminal = class Terminal extends PIXI.Container
       l.push t if t instanceof Terminal
     return l
 
+  each: (cb) ->
+    for t in @terminalChildren()
+      if cb(t) == true
+        break
+
+  focusableChildren: ->
+    l = []
+    for t in @children
+      l.push t if t instanceof Terminal
+    return l
+
   bringToFront: ->
     z = 0
-    tc = @terminalChildren()
-    for t in tc
+    @each (t) ->
       if t._z > z
         z = t._z
     @z = z + 1
@@ -843,7 +957,7 @@ Swim.Terminal = class Terminal extends PIXI.Container
     @z++
 
   sendToBack: ->
-    for t in @terminalChildren()
+    @each (t) ->
       t._z++
     @z = 0
 
@@ -926,7 +1040,7 @@ Swim.TermChar = class TermChar
     @_terminal = terminal
     if !config?
       config = {}
-    @_pos = if config?.pos? then config.pos.clone() or new PIXI.Point()
+    @_pos = if config?.pos? then config.pos.clone() or @point()
     config.ch = config?.ch or ' '
     config.wide = @_isWide(config.ch)
     config.fg = config?.fg or @_terminal._fg
@@ -969,7 +1083,7 @@ Swim.TermChar = class TermChar
         update = true
       if config.fg? and config.fg != @_fg
         @_fg = config.fg
-        @_update()
+        update = true
       if config.bg? and config.bg != @_bg
         @_bg = config.bg
         update = true

@@ -1,0 +1,8 @@
+{
+  "name": "swim-document",
+  "version": "0.0.1",
+  "description": "document",
+  "main": "index.coffee",
+  "author": "Alain Deschenes <arianesoftinc@gmail.com>",
+  "license": "MIT"
+}

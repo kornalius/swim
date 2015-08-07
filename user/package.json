@@ -5,6 +5,7 @@
     "async": "^0.9.0",
     "swim-terminal": "./plugins/",
     "swim-textbuffer": "./plugins/",
-    "swim-textedit": "./plugins/"
+    "swim-editor": "./plugins/",
+    "swim-document": "./plugins/"
   }
 }

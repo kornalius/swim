@@ -1,13 +1,13 @@
 { Plugin, $, path } = Swim
 
-require('./palettes.coffee')
-require('./fonts.coffee')
-require('./cursor.coffee')
-require('./terminal.coffee')
-
 module.exports =
 
   load: ->
+
+    require('./palettes.coffee')
+    require('./fonts.coffee')
+    require('./cursor.coffee')
+    require('./terminal.coffee')
 
     Swim.Keys = Keys = require 'combokeys'
 
@@ -129,6 +129,7 @@ module.exports =
               t._update()
 
         # console.log "update chars #{done} / #{Swim.updates.chars.length}..."
+
         Swim.updates.chars = []
         Swim.updates.render = true
 
@@ -140,6 +141,7 @@ module.exports =
           t = c._terminal
 
           if c.__destroy
+            c.emit 'destroy'
             if t?
               _.remove(t.cursors, c)
             if c._sprite?
@@ -167,6 +169,11 @@ module.exports =
               t.addChild(c._sprite)
 
             pp = t.posToPixel(c._pos, true)
+
+            if c._sprite.pos.x != pp.x or c._sprite.pos.y != pp.y
+              c.emit 'move', pp
+              t.emit 'cursor:move', c, pp
+
             c._sprite.position.x = pp.x + c._offset.x
             c._sprite.position.y = pp.y + c._offset.y
             c._sprite.visible = c._visible and c._state.visible and c._inBounds(c._pos)
@@ -188,6 +195,7 @@ module.exports =
             t._showCursors()
           else
             t._hideCursors()
+          t.emit 'terminal:change'
 
         # console.log "update terminals #{Swim.updates.terminals.length}..."
         Swim.updates.terminals = []
@@ -197,7 +205,6 @@ module.exports =
       if Swim.updates.render
         Swim.renderer.render(Swim.stage)
         Swim.updates.render = false
-
 
 
     t = new Swim.Terminal(pos: new PIXI.Point(2, 2), size: new PIXI.Point(160, 45), palette: Swim.palettes.default, charWidth: 11, charHeight: 20, padding: 4, border: { width: 2, fg: 0x333333 })
@@ -256,10 +263,18 @@ module.exports =
   unload: ->
     for t in Swim.terminals
       t.destroy()
-    Swim.terminals = []
 
     for f in Swim.fonts
       f.destroy()
-    Swim.fonts = []
 
+    Swim.terminals = null
+    Swim.fonts = null
     Swim.key = null
+    Swim.Keys = null
+    Swim.updates = null
+    Swim.Terminal = null
+    Swim.TermChar = null
+    Swim.TermFont = null
+    Swim.TermFontLine = null
+    Swim.TermCursor = null
+    Swim.palettes = null

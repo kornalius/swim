@@ -85,6 +85,9 @@ console.log "Home path: #{Swim.dirs.home}"
 ipc.on 'load', ->
   window.Swim.PIXI = PIXI
 
+  Swim.PIXI.Point.prototype.distance = (target) ->
+    Math.sqrt((@x - target.x) * (@x - target.x) + (@y - target.y) * (@y - target.y))
+
   Swim.PIXI.Point.prototype.toString = ->
     "(#{@x}, #{@y})"
 
@@ -97,6 +100,7 @@ ipc.on 'load', ->
   Swim.renderer = new PIXI.WebGLRenderer w, h
   document.body.appendChild Swim.renderer.view
   Swim.stage = new PIXI.Container()
+  # Swim.stage.interactive = true
 
   Swim.settings.load (err) ->
     # York.plugins.install ['async'], (err) ->
