@@ -1,0 +1,8 @@
+{
+  "name": "swim-object",
+  "version": "0.0.1",
+  "description": "text object",
+  "main": "index.coffee",
+  "author": "Alain Deschenes <arianesoftinc@gmail.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "swim-mode",
+  "version": "0.0.1",
+  "description": "mode",
+  "main": "index.coffee",
+  "author": "Alain Deschenes <arianesoftinc@gmail.com>",
+  "license": "MIT"
+}

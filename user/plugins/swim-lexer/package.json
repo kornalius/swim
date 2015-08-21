@@ -1,0 +1,14 @@
+{
+  "name": "swim-lexer",
+  "version": "0.0.1",
+  "description": "lexer",
+  "main": "index.coffee",
+  "author": "Alain Deschenes <arianesoftinc@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "bl": "^1.0.0",
+    "textlex": "^0.5.1",
+    "through2": "^2.0.0"
+  }
+}
