@@ -1,8 +1,0 @@
-{
-  "name": "swim-editor",
-  "version": "0.0.1",
-  "description": "text editor",
-  "main": "index.coffee",
-  "author": "Alain Deschenes <arianesoftinc@gmail.com>",
-  "license": "MIT"
-}

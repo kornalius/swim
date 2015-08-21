@@ -17,6 +17,8 @@ if !window._?
     uncapitalize: (str) ->
       return str[0].toLowerCase() + str.slice(1)
 
+  _.extend _, require('lodash')
+
   _.is = require('is')
   _.extend(_, require('underscore-contrib'))
   _.extend(_, require('starkjs-underscore'))
@@ -60,7 +62,12 @@ if !window.Swim?
     vm: r.require 'vm'
     zlib: r.require 'zlib'
     util: r.require 'util'
-
+    EventEmitter: require 'eventemitter3'
+    $: require 'cash-dom'
+    color: require 'color'
+    IS_WIN: /^win/.test process.platform
+    IS_OSX: process.platform == 'darwin'
+    IS_LINUX: process.platform == 'linux'
   _.extend Swim,
     settings: require('./settings.coffee')
     plugins: require('./plugins.coffee')
@@ -81,8 +88,28 @@ console.log "App path: #{Swim.dirs.app}"
 console.log "User path: #{Swim.dirs.user}"
 console.log "Home path: #{Swim.dirs.home}"
 
+soundLoaded = ->
+  console.log('********************** sounds loaded', arguments)
+  ion.sound.play("bell")
+
 
 ipc.on 'load', ->
+
+  setTimeout(->
+    soundFiles = Swim.fs.listSync("./sounds/")
+    soundNames = _.map soundFiles, (f) -> { name: Swim.path.basename(Swim.path.resolve(f)).split('.')[0] }
+    ion.sound(
+      sounds: soundNames
+      volume: 1.0
+      path: "./sounds/"
+      preload: false
+      multiplay: true
+      scope: this
+      ready_callback: (config) ->
+        console.log("sound '#{config.name}' preloaded!")
+    )
+  , 100)
+
   window.Swim.PIXI = PIXI
 
   Swim.PIXI.Point.prototype.distance = (target) ->

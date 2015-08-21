@@ -6,7 +6,6 @@
 			[
 				".gitignore",
 				"LICENSE",
-				"README.md",
 				"swim.sublime-project",
 				"swim.sublime-workspace"
 			],

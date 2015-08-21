@@ -1,5 +1,7 @@
 plugins:
-  "swim-terminal": true
+  "swim-object": true
+  "swim-lexer": true
+  "swim-mode": true
   "swim-textbuffer": true
-  "swim-editor": true
+  "swim-terminal": true
   "swim-document": true

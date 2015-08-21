@@ -1,4 +1,4 @@
-{ Plugin, PIXI, PropertyAccessors } = Swim
+{ Plugin, PIXI, PropertyAccessors, EventEmitter } = Swim
 
 cc = 0
 
@@ -12,7 +12,7 @@ Swim.getFont = (config) ->
   return f
 
 
-Swim.TermFont = class TermFont
+Swim.TermFont = class TermFont extends EventEmitter
 
   PropertyAccessors.includeInto(@)
 
@@ -68,6 +68,7 @@ Swim.TermFont = class TermFont
   @::accessor 'loaded', -> @_loaded
 
   constructor: (config) ->
+    EventEmitter @
     @_cached = []
     @_path = config?.path or null
     @_name = config?.name or 'Arial'
@@ -78,6 +79,9 @@ Swim.TermFont = class TermFont
     @_smooth = config?.smooth == true
     @_bitmap = false
     @_loaded = true
+
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'font.created', ee
 
     if @_path?
       @_loaded = false
@@ -113,11 +117,22 @@ Swim.TermFont = class TermFont
           setTimeout _check, 10
         else
           that._loaded = true
+          ee = Swim.CustomEvent target: that
+          that.modes_emit 'font.loaded', ee
           that.clear()._update()
 
       setTimeout _check, 10
 
+  modes_emit: (e) ->
+    for t in Swim.terminals
+      for m in t._modes
+        m.emit e
+        if e.defaultPrevented
+          break
+
   clear: ->
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'font.clear', ee
     for lc in @_cached
       lc.clear()
       cc--
@@ -125,7 +140,9 @@ Swim.TermFont = class TermFont
     return @
 
   destroy: ->
-    console.log "Destroying #{@toString()}..."
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'font.destroyed', ee
+    # console.log "Destroying #{@toString()}..."
     for lc in @_cached
       lc.destroy()
     @_cached = []
@@ -166,11 +183,20 @@ Swim.TermFont = class TermFont
   contextFont: ->
     "#{if @_bold then "bold " else ""}#{if @_italic then "italic " else ""}#{if @_underline then "underline " else ""}#{@_size}px '#{@_name}'"
 
+  getConfig: ->
+    path: @_path
+    name: @_name
+    size: @_size
+    bold: @_bold
+    italic: @_italic
+    underline: @_underline
+    smooth: @_smooth
+
   toString: ->
     "TermFont #{@contextFont()} #{if @_smooth then " smooth" else ""}"
 
 
-Swim.TermFontLine = class TermFontLine
+Swim.TermFontLine = class TermFontLine extends EventEmitter
 
   PropertyAccessors.includeInto(@)
 
@@ -184,6 +210,7 @@ Swim.TermFontLine = class TermFontLine
     get: -> @_text.texture
 
   constructor: (parent, index) ->
+    EventEmitter @
     @_parent = parent
     @_index = index or 0
     @_MAX = 2048
@@ -223,7 +250,7 @@ Swim.TermFontLine = class TermFontLine
     return @
 
   destroy: ->
-    console.log "Destroying #{@toString()}..."
+    # console.log "Destroying #{@toString()}..."
     _.remove(Swim.updates.fonts, @)
     @clear()
 

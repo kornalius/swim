@@ -1,3 +1,5 @@
+{ EventEmitter } = Swim
+
 ###
 Vocab:
 * `row` - the 0-based index of a line.
@@ -17,12 +19,10 @@ Keeping points synchronized
 
 ###
 
-{ EventEmitter } = require 'events'
-
 # Events:
-# line:change - {row, text}
-# line:insert - {row, text}
-# line:delete - {row}
+# line_change - {row, text}
+# line_insert - {row, text}
+# line_delete - {row}
 # reset       - {}
 Swim.TextBuffer = class TextBuffer extends EventEmitter
   #
@@ -30,13 +30,22 @@ Swim.TextBuffer = class TextBuffer extends EventEmitter
   # saveCursor  - A function which should return some cursor data.
   # placeCursor - A function which is passed the cursor data to
   #               restore the position.
-  constructor: (text, @saveCursor = null, @placeCursor = null) ->
+  constructor: (terminal, text, @saveCursor = null, @placeCursor = null) ->
+    EventEmitter @
+    @_terminal = terminal
     @lines        = [""]
     # Eliminate the Windows line-endings.
     @setText text.replace(/\r/g, "")
     @undoStack    = []
     @redoStack    = []
     @currentSteps = []
+
+  modes_emit: (e) ->
+    if @_terminal?
+      for m in @_terminal._modes
+        m.emit e
+        if e.defaultPrevented
+          break
 
   # Public: Create a point on this TextBuffer.
   #
@@ -258,7 +267,9 @@ Swim.TextBuffer = class TextBuffer extends EventEmitter
           row:     row
           oldText: line
 
-      @emit "line:delete", {row}
+      ee = Swim.CustomEvent target: @, row: row
+      @modes_emit 'text.line.delete', ee
+      @emit "line:delete", row
     return line
 
   # Public: Set the text of the given line.
@@ -284,7 +295,9 @@ Swim.TextBuffer = class TextBuffer extends EventEmitter
         oldText: oldText
         newText: text
 
-    @emit "line:change", {row, text}
+    ee = Swim.CustomEvent target: @, row: row, text: text
+    @modes_emit 'text.line.change', ee
+    @emit "line:change", row, text
     return
 
   # Public: Create a new line and place it at `row`, moving the old
@@ -308,7 +321,9 @@ Swim.TextBuffer = class TextBuffer extends EventEmitter
         row:     row
         newText: text
 
-    @emit "line:insert", {row, text}
+    ee = Swim.CustomEvent target: @, row: row, text: text
+    @modes_emit 'text.line.insert', ee
+    @emit "line:insert", row, text
     return
 
   # Public: Reset the text of the editor and replace it with the
@@ -324,6 +339,8 @@ Swim.TextBuffer = class TextBuffer extends EventEmitter
   #
   setText: (text) ->
     @lines = text.split "\n"
+    ee = Swim.CustomEvent target: @, text: text
+    @modes_emit 'text.change', ee
     @emit "reset"
 
   # Public: Step back.

@@ -1,6 +1,6 @@
 { Plugin, $, path, PropertyAccessors, Terminal, EventEmitter } = Swim
 
-Swim.Document = class Document
+Swim.Document = class Document extends EventEmitter
 
   PropertyAccessors.includeInto(@)
 
@@ -11,8 +11,10 @@ Swim.Document = class Document
     set: (value) ->
       @_options = value
 
-  constructor: (config) ->
+  constructor: (terminal, config) ->
     EventEmitter @
+
+    @_terminal = terminal
 
     if !config?
       config = {}
@@ -24,19 +26,42 @@ Swim.Document = class Document
     if config?.options?
       _.extend(@_options, config.options)
 
-    @_terminal = config?.terminal
     @_modes = []
 
+  modes_emit: (e) ->
+    for m in @_modes
+      m.emit e
+      if e.defaultPrevented
+        break
+
   isReadOnly: ->
-    @_options.readonly
+    ee = Swim.CustomEvent target: @, readonly: @_options.readonly
+    @modes_emit 'document.readonly', ee
+    ee.detail.readonly
 
   isModified: ->
-    @_options.modified
+    ee = Swim.CustomEvent target: @, modified: @_options.modified
+    @modes_emit 'document.modified', ee
+    ee.detail.modified
 
   load: (cb) ->
-    @_options.modified = false
-    return @
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'document.load', ee
+    if !ee.defaultPrevented
+      @_options.modified = false
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'document.loaded', ee
+      return true
+    else
+      return false
 
   save: (cb) ->
-    @_options.modified = false
-    return @
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'document.save', ee
+    if !ee.defaultPrevented
+      @_options.modified = false
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'document.saved', ee
+      return true
+    else
+      return false

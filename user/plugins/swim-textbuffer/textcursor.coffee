@@ -1,4 +1,4 @@
-{ EventEmitter } = require 'events'
+{ EventEmitter } = Swim
 { TextBuffer, TextPoint, TextRegion } = require './textbuffer.coffee'
 
 # Events:
@@ -8,12 +8,27 @@
 Swim.TextCursor = class TextCursor extends EventEmitter
 
   constructor: (@buffer, row, col) ->
+    EventEmitter @
     @point = @buffer.point row, col
-    @point.on "move", => @emit "move"
+    @point.on "move", =>
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'text.cursor.move', ee
+      @emit "move"
 
     @buffer.on "line:change", => @point?.round()
     @buffer.on "line:insert", => @point?.round()
     @buffer.on "line:delete", => @point?.round()
+
+  attached: ->
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'text.cursor.attached', ee
+
+  detached: ->
+    ee = Swim.CustomEvent target: @
+    @modes_emit 'text.cursor.detached', ee
+
+  modes_emit: (e) ->
+    @buffer.modes_emit e
 
   serialize: ->
     if @point
@@ -37,7 +52,10 @@ Swim.TextCursor = class TextCursor extends EventEmitter
     return if @point
     @point  = @region.end
     @region = null
-    @point.on "move", => @emit "move"
+    @point.on "move", =>
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'text.cursor.move', ee
+      @emit "move"
 
   toTextRegion: ->
     return if @region
@@ -45,8 +63,14 @@ Swim.TextCursor = class TextCursor extends EventEmitter
     @point  = null
 
     @region.begin.removeAllListeners "move"
-    @region.begin.on "move", => @emit "move"
-    @region.end.on   "move", => @emit "move"
+    @region.begin.on "move", =>
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'text.cursor.move', ee
+      @emit "move"
+    @region.end.on   "move", =>
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'text.cursor.move', ee
+      @emit "move"
 
   # Public:
   moveTo: (row, col) ->
@@ -143,6 +167,8 @@ Swim.TextCursor = class TextCursor extends EventEmitter
       return false
     else
       @region.delete()
+      ee = Swim.CustomEvent target: @
+      @modes_emit 'text.cursor.move', ee
       @emit "move"
       return true
 
